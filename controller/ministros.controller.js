@@ -33,9 +33,9 @@ const ministrosController = {
 
     add: async (req, res) => {
         try {
-                const {Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificación, Estado} = req.body                
-                const sql = "INSERT INTO ministro (Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificación, Estado) VALUES(?, ?, ?, ?, ?, ?, ?,?)"
-                const [rows, fields] = await pool.query(sql, [Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificación, Estado])
+                const {Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificacion, Estado} = req.body                
+                const sql = "INSERT INTO ministro (Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificacion, Estado) VALUES(?, ?, ?, ?, ?, ?, ?,?)"
+                const [rows, fields] = await pool.query(sql, [Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificacion, Estado])
                 res.json({
                     data:rows
                 })
