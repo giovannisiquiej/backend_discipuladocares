@@ -49,7 +49,7 @@ const ministrosController = {
 
     update: async (req, res) => {
         try {
-                const {Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificación, Estado} = req.body 
+                const {Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificacion, Estado} = req.body 
                 const { id } = req.params
                 var sql = "UPDATE ministro " 
                     sql = sql + " SET Nombre =?, " 
@@ -58,10 +58,10 @@ const ministrosController = {
                     sql = sql + "     Direccion =?, " 
                     sql = sql + "     FechaNacimiento =?, " 
                     sql = sql + "     Genero =?, " 
-                    sql = sql + "     NumeroIdentificación =?, "
+                    sql = sql + "     NumeroIdentificacion =?, "
                     sql = sql + "     Estado =? "
                     sql = sql + " WHERE Id =? "
-                const [rows, fields] = await pool.query(sql, [Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificación, Estado, id])
+                const [rows, fields] = await pool.query(sql, [Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificacion, Estado, id])
                 res.json({
                     data:rows
                 })
