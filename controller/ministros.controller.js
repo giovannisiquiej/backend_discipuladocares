@@ -4,7 +4,7 @@ const ministrosController = {
 
     getAll: async (req, res) => {
         try {
-            const [rows, fields] = await pool.query("SELECT * FROM  ministro  ")
+            const [rows, fields] = await pool.query("SELECT * FROM  ministro WHERE Estado = 'A'  ")
             res.json({
                 data:rows
             })
@@ -19,7 +19,7 @@ const ministrosController = {
     getById: async (req, res) => {
         try {
             const { id } = req.params
-            const [rows, fields] = await pool.query("SELECT * FROM ministro where id= ?", [id])
+            const [rows, fields] = await pool.query("SELECT * FROM ministro WHERE Id= ? AND Estado = 'A'", [id])
             res.json({
                 data:rows
             })
