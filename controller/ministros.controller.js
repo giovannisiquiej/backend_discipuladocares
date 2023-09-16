@@ -52,7 +52,7 @@ const ministrosController = {
                 const {Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificacion, Estado} = req.body 
                 const { id } = req.params
                 var sql = "UPDATE ministro " 
-                    sql = sql + " SET Nombre =?, " 
+                    sql = sql + " SET Nombres =?, " 
                     sql = sql + "     Apellidos =?, " 
                     sql = sql + "     ApellidoCasada =?, " 
                     sql = sql + "     Direccion =?, " 
@@ -68,7 +68,8 @@ const ministrosController = {
         } catch (error) {
             console.log(error)
             res.json({
-                status: "error"
+                status: "error",
+                messageError: error
             })
         }
     },
