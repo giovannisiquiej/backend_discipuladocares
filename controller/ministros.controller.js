@@ -31,7 +31,7 @@ const ministrosController = {
         }
     },
 
-    add: async (req, res) => {
+    addMinistro: async (req, res) => {
         try {
                 const {Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificacion, Estado} = req.body                
                 const sql = "INSERT INTO ministro (Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificacion, Estado) VALUES(?, ?, ?, ?, ?, ?, ?,?)"
@@ -47,7 +47,7 @@ const ministrosController = {
         }
     },
 
-    update: async (req, res) => {
+    updMinistro: async (req, res) => {
         try {
                 const {Nombres, Apellidos, ApellidoCasada, Direccion, FechaNacimiento, Genero, NumeroIdentificacion, Estado} = req.body 
                 const { id } = req.params
@@ -74,7 +74,7 @@ const ministrosController = {
         }
     },
 
-    delete: async (req, res) => {
+    dltMinistro: async (req, res) => {
         try {
                 const { id } = req.params
                 const sql = "DELETE FROM ministro WHERE Id =? "
