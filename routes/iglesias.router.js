@@ -1,13 +1,12 @@
 const express = require("express")
 const router = express.Router()
 
+const { getAll, getById, add, update, deleteIglesia } = require("../controller/iglesias.controller")
 
-const iglesiasController = require("../controller/iglesias.controller")
-
-router.get("/",iglesiasController.getAll)
-router.get("/:id",iglesiasController.getById)
-router.post("/",iglesiasController.add)
-router.put("/:id",iglesiasController.update)
-router.delete("/:id",iglesiasController.delete)
+router.get("/",getAll)
+router.get("/:id",getById)
+router.post("/",add)
+router.put("/:id",update)
+router.delete("/:id",deleteIglesia)
 
 module.exports = router

@@ -72,7 +72,7 @@ const iglesiasController = {
         }
     },
 
-    delete: async (req, res) => {
+    deleteIglesia: async (req, res) => {
         try {
                 const { id } = req.params
                 const sql = "DELETE FROM iglesia WHERE Id =? "

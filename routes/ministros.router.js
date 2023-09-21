@@ -1,16 +1,12 @@
-// const express = require("express")
-// const router = express.Router()
+const express = require("express")
+const routerMinistros = express.Router()
 
-import { Router} from 'expres';
-const router = Router();
+const {getAll, getById, addMinistro, updMinistro, dltMinistro} = require("../controller/ministros.controller")
 
-//const ministrosController = require("../controller/ministros.controller")
-import { getAll, getById, addMinistro, updMinistro, dltMinistro} from '../controller/ministros.controller'
+routerMinistros.get("/", getAll)
+routerMinistros.get("/:id", getById)
+routerMinistros.post("/",addMinistro)
+routerMinistros.put("/:id",updMinistro)
+routerMinistros.delete("/:id",dltMinistro)
 
-router.get("/", getAll)
-router.get("/:id", getById)
-router.post("/",addMinistro)
-router.put("/:id",updMinistro)
-router.delete("/:id",dltMinistro)
-
-module.exports = router
+module.exports = routerMinistros;
